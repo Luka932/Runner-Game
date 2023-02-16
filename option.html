@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Option</title>
+  <link rel="stylesheet" href="option.css">
+</head>
+<body style="background-color:dimgrey">
+<form>
+    <label>Touche de saut :</label>
+    <select changeControls() class="Key" id="jumpKey">
+      <option value="Space">Barre espace</option>
+      <option value="z">Z</option>
+      <option value="up">Flèche vers le haut</option>
+    </select><br><br>
+    
+    <label>Touche pour se baisser :</label>
+    <select changeControls() onselect="console.log(duckKey)" class="Key" id="duckKey">
+      <option value="ShiftLeft">Shift</option>
+      <option value="s">S</option>
+      <option value="down">Flèche vers le bas</option>
+    </select>
+    <br>
+    <button class="exit-button" type="reset" onclick="window.history.back()">Retour</button>
+  </form>
+  <script  type="module" src="option.js"></script>
+</body>
+</html>

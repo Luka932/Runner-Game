@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.title {
+    font-size: 50px;
+    margin-bottom: 75px;
+}
+.start-button {
+    padding: 20px 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 30px;
+}
+.option-button {
+    padding: 20px 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.exit-button {
+    padding: 20px 40px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    margin-top: 10px;
+}
