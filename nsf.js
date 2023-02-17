@@ -41,14 +41,14 @@ class Player {
   }
   
   Animate () {
-    if (keys[jumpKey]) {
+    if (keys[jumpKey] && !keys[duckKey]) {
       this.Jump();
     } else {
       this.jumpTimer = 0;
     }
 
     if (keys[duckKey]) {
-      this.h = this.originalHeight / 2;
+      this.h = this.originalHeight / 1.5;
     } else {
       this.h = this.originalHeight;
     }
@@ -131,12 +131,13 @@ class Text {
 }
 
 function SpawnObstacle () {
-  let size = RandomIntInRange(20, 70);
+  let size = RandomIntInRange(35, 100);
   let type = RandomIntInRange(0, 1);
-  let obstacle = new Obstacle(canvas.width + size, canvas.height - size, size, size, '#2484E4');
+  let obstacle = new Obstacle(canvas.width + size, canvas.height - size, size, size, '#000000');
 
   if (type == 1) {
     obstacle.y -= player.originalHeight - 10;
+    obstacle.w += player.originalHeight + 300;
   }
   obstacles.push(obstacle);
 }
@@ -161,7 +162,7 @@ function Start () {
     highscore = localStorage.getItem('highscore');
   }
 
-  player = new Player(25, 0, 50, 50, '#FF5858');
+  player = new Player(100, 0, 75, 75, '#000000');
 
   scoreText = new Text("Score: " + score, 25, 25, "left", "#212121", "20");
   highscoreText = new Text("Highscore: " + highscore, canvas.width - 25, 25, "right", "#212121", "20");
