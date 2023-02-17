@@ -5,8 +5,8 @@ console.log(jumpKey, duckKey)
 fetch('l1.json')
   .then(response => response.json())
   .then(data => {
-    data.map;
-    console.log(data.map);
+    const map = data.map;
+    console.log(map);
   })
   .catch(error => console.error(error));
 
@@ -136,10 +136,12 @@ class Text {
     ctx.closePath();
   }
 }
+const l1 = [1, 1, 1, 1, 1, 1, 0, 0, 0];
+
 function SpawnObstacle () {
   let size = RandomIntInRange(35, 100);
   let obstacle = new Obstacle(canvas.width + size, canvas.height - size, size, size, '#000000');
-  const l1 = data.map;
+  
   let composition = l1.shift();
 
   if (composition === 1) {
@@ -148,8 +150,11 @@ function SpawnObstacle () {
   }
   obstacles.push(obstacle);
   console.log(composition);
-}
 
+  if (l1.length === 0) {
+    l1 = [1, 1, 1, 1, 1, 1, 0, 0, 0];
+  }
+}
 
 function RandomIntInRange (min, max) {
   return Math.round(Math.random() * (max - min) + min);
